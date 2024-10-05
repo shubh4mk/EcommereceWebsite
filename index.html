@@ -117,6 +117,34 @@
     <p>&copy; 2024 E-Shop. All rights reserved.</p>
   </footer>
 
+  <!-- JavaScript for Google Analytics Events -->
+    <script>
+      // Track Add to Cart clicks
+      document.getElementById('add-to-cart-1').addEventListener('click', function() {
+        gtag('event', 'add_to_cart', {
+          'event_category': 'ecommerce',
+          'event_label': 'Product 1',
+          'value': 19.99
+        });
+      });
+
+      document.getElementById('add-to-cart-2').addEventListener('click', function() {
+        gtag('event', 'add_to_cart', {
+          'event_category': 'ecommerce',
+          'event_label': 'Product 2',
+          'value': 29.99
+        });
+      });
+
+      document.getElementById('add-to-cart-3').addEventListener('click', function() {
+        gtag('event', 'add_to_cart', {
+          'event_category': 'ecommerce',
+          'event_label': 'Product 3',
+          'value': 39.99
+        });
+      });
+    </script>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
