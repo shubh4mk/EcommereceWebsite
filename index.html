@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Shop</title>
-
+  <title>E-Shop | Online Store for All Your Needs</title>
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
   <script>
@@ -63,7 +63,7 @@
       <!-- Product Card 1 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="assets/images/product1.png" alt="Product 1">
+          <img class="card-img-top" src="assets/images/product1.png" alt="Product 1 image - $19.99">
           <div class="card-body text-center">
             <h4 class="card-title">Product 1</h4>
             <p class="card-text">$19.99</p>
@@ -74,7 +74,7 @@
       <!-- Product Card 2 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="assets/images/product2.png" alt="Product 2">
+          <img class="card-img-top" src="assets/images/product2.png" alt="Product 2 image - $29.99">
           <div class="card-body text-center">
             <h4 class="card-title">Product 2</h4>
             <p class="card-text">$29.99</p>
@@ -85,7 +85,7 @@
       <!-- Product Card 3 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="assets/images/product3.png" alt="Product 3">
+          <img class="card-img-top" src="assets/images/product3.png" alt="Product 3 image - $39.99">
           <div class="card-body text-center">
             <h4 class="card-title">Product 3</h4>
             <p class="card-text">$39.99</p>
@@ -103,17 +103,19 @@
 
   <!-- Custom event tracking for Purchase -->
   <script>
+    // Add event listener for purchase button
     document.getElementById('purchase-button').addEventListener('click', function() {
+      // Send the purchase event to Google Analytics when the button is clicked
       gtag('event', 'purchase', {
-        'transaction_id': 'T_12345_1',
-        'value': 79.97, // Total value of purchase
-        'currency': 'USD',
-        'items': [
+        'transaction_id': 'T_12345_1', // Unique transaction ID
+        'value': 79.97,                // Total purchase value
+        'currency': 'USD',             // Currency of the transaction
+        'items': [                     // List of purchased items
           {
-            'item_name': 'Product 1',
-            'item_id': 'SKU_12345',
-            'price': 19.99,
-            'quantity': 1
+            'item_name': 'Product 1',  // Name of product
+            'item_id': 'SKU_12345',    // SKU or ID of the product
+            'price': 19.99,            // Price of the product
+            'quantity': 1              // Quantity purchased
           },
           {
             'item_name': 'Product 2',
