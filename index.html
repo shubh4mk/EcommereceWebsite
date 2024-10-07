@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Shop</title>
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
   <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BK760PLX3W');
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BK760PLX3W');
   </script>
 
   <!-- Google Tag Manager -->
@@ -20,13 +22,11 @@
   })(window,document,'script','dataLayer','GTM-W6J4QG7H');</script>
   <!-- End Google Tag Manager -->
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Shop</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="assets/css/styles.css" rel="stylesheet">
 </head>
+
 <body>
 
   <!-- Google Tag Manager (noscript) -->
@@ -54,7 +54,6 @@
       <h1 class="display-4">Welcome to E-Shop</h1>
       <p class="lead">Your one-stop online store for all your needs.</p>
       <a href="product.html" class="btn btn-primary btn-lg">Shop Now</a>
-      
     </div>
   </header>
 
@@ -64,97 +63,78 @@
       <!-- Product Card 1 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="assets\images\product1.png" alt="Product 1">
+          <img class="card-img-top" src="assets/images/product1.png" alt="Product 1">
           <div class="card-body text-center">
             <h4 class="card-title">Product 1</h4>
             <p class="card-text">$19.99</p>
-            <a href="product.html" id="add-to-cart" class="btn btn-primary">Add to Cart</a>
+            <a href="product.html" id="add-to-cart1" class="btn btn-primary">Add to Cart</a>
           </div>
         </div>
       </div>
       <!-- Product Card 2 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="assets\images\product1.png" alt="Product 2">
+          <img class="card-img-top" src="assets/images/product2.png" alt="Product 2">
           <div class="card-body text-center">
             <h4 class="card-title">Product 2</h4>
             <p class="card-text">$29.99</p>
-            <a href="product.html" id="add-to-cart" class="btn btn-primary">Add to Cart</a>
+            <a href="product.html" id="add-to-cart2" class="btn btn-primary">Add to Cart</a>
           </div>
         </div>
       </div>
       <!-- Product Card 3 -->
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="assets\images\product1.png" alt="Product 3">
+          <img class="card-img-top" src="assets/images/product3.png" alt="Product 3">
           <div class="card-body text-center">
             <h4 class="card-title">Product 3</h4>
             <p class="card-text">$39.99</p>
-            <a href="product.html" id="add-to-cart" class="btn btn-primary">Add to Cart</a>
+            <a href="product.html" id="add-to-cart3" class="btn btn-primary">Add to Cart</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Video Section -->
-    <div class="container mt-5 product-video">
-      <h2 class="text-center mb-4">Watch Our Latest Product Video</h2>
-      <div class="embed-responsive embed-responsive-16by9">
-          <iframe id="youtube-video" class="embed-responsive-item" width="560" height="315" 
-              src="https://www.youtube.com/embed/geFi-ZpN2ZM?enablejsapi=1" 
-              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-              gyroscope; picture-in-picture" allowfullscreen>
-          </iframe>
-      </div>
-    </div>
+  <!-- Custom event tracking for Add to Cart -->
+  <script>
+    document.getElementById('add-to-cart1').addEventListener('click', function() {
+      gtag('event', 'add_to_cart', {
+        'item_name': 'Product 1',
+        'item_id': 'SKU_12345',
+        'price': 19.99,
+        'quantity': 1,
+        'currency': 'USD'
+      });
+    });
+    
+    document.getElementById('add-to-cart2').addEventListener('click', function() {
+      gtag('event', 'add_to_cart', {
+        'item_name': 'Product 2',
+        'item_id': 'SKU_67890',
+        'price': 29.99,
+        'quantity': 1,
+        'currency': 'USD'
+      });
+    });
 
-    <!-- Download Button -->
-    <div class="text-center mt-4">
-      <a href="assets/documents/brochure.pdf" class="download-btn" download>Download Our Brochure</a>
-    </div>
+    document.getElementById('add-to-cart3').addEventListener('click', function() {
+      gtag('event', 'add_to_cart', {
+        'item_name': 'Product 3',
+        'item_id': 'SKU_24680',
+        'price': 39.99,
+        'quantity': 1,
+        'currency': 'USD'
+      });
+    });
+  </script>
 
   <footer class="text-center mt-4">
     <p>&copy; 2024 E-Shop. All rights reserved.</p>
   </footer>
-    
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-BK760PLX3W');
-    </script>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title of the page</title>
-</head>
-<body>
-    <p>Welcome to my website!</p>
-    
-    <script>
-      /**
-      *   The following event is sent when the page loads. You could
-      *   wrap the event in a JavaScript function so the event is
-      *   sent when the user performs some action.
-      */
-      gtag('event', 'screen_view', {
-        'app_name': 'myAppName',
-        'screen_name': 'Home'
-      });
-    </script> 
-</body>
-</html>
-
