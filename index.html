@@ -116,37 +116,45 @@
   <footer class="text-center mt-4">
     <p>&copy; 2024 E-Shop. All rights reserved.</p>
   </footer>
-
-  <!-- JavaScript for Google Analytics Events -->
-    <script>
-      // Track Add to Cart clicks
-      document.getElementById('add-to-cart-1').addEventListener('click', function() {
-        gtag('event', 'new_add_to_cart', {
-          'event_category': 'ecommerce',
-          'event_label': 'Product 1',
-          'value': 19.99
-        });
-      });
-
-      document.getElementById('add-to-cart-2').addEventListener('click', function() {
-        gtag('event', 'new_add_to_cart', {
-          'event_category': 'ecommerce',
-          'event_label': 'Product 2',
-          'value': 29.99
-        });
-      });
-
-      document.getElementById('add-to-cart-3').addEventListener('click', function() {
-        gtag('event', 'new_add_to_cart', {
-          'event_category': 'ecommerce',
-          'event_label': 'Product 3',
-          'value': 39.99
-        });
-      });
-    </script>
-
+    
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-BK760PLX3W');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title of the page</title>
+</head>
+<body>
+    <p>Welcome to my website!</p>
+    
+    <script>
+      /**
+      *   The following event is sent when the page loads. You could
+      *   wrap the event in a JavaScript function so the event is
+      *   sent when the user performs some action.
+      */
+      gtag('event', 'screen_view', {
+        'app_name': 'myAppName',
+        'screen_name': 'Home'
+      });
+    </script> 
+</body>
+</html>
+
