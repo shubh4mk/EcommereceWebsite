@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>E-Shop</title>
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
   <script>
@@ -96,35 +96,38 @@
     </div>
   </div>
 
-  <!-- Custom event tracking for Add to Cart -->
-  <script>
-    document.getElementById('add-to-cart1').addEventListener('click', function() {
-      gtag('event', 'add_to_cart', {
-        'item_name': 'Product 1',
-        'item_id': 'SKU_12345',
-        'price': 19.99,
-        'quantity': 1,
-        'currency': 'USD'
-      });
-    });
-    
-    document.getElementById('add-to-cart2').addEventListener('click', function() {
-      gtag('event', 'add_to_cart', {
-        'item_name': 'Product 2',
-        'item_id': 'SKU_67890',
-        'price': 29.99,
-        'quantity': 1,
-        'currency': 'USD'
-      });
-    });
+  <!-- Purchase Button -->
+  <div class="text-center mt-4">
+    <button id="purchase-button" class="btn btn-success">Complete Purchase</button>
+  </div>
 
-    document.getElementById('add-to-cart3').addEventListener('click', function() {
-      gtag('event', 'add_to_cart', {
-        'item_name': 'Product 3',
-        'item_id': 'SKU_24680',
-        'price': 39.99,
-        'quantity': 1,
-        'currency': 'USD'
+  <!-- Custom event tracking for Purchase -->
+  <script>
+    document.getElementById('purchase-button').addEventListener('click', function() {
+      gtag('event', 'purchase', {
+        'transaction_id': 'T_12345_1',
+        'value': 79.97, // Total value of purchase
+        'currency': 'USD',
+        'items': [
+          {
+            'item_name': 'Product 1',
+            'item_id': 'SKU_12345',
+            'price': 19.99,
+            'quantity': 1
+          },
+          {
+            'item_name': 'Product 2',
+            'item_id': 'SKU_67890',
+            'price': 29.99,
+            'quantity': 1
+          },
+          {
+            'item_name': 'Product 3',
+            'item_id': 'SKU_24680',
+            'price': 39.99,
+            'quantity': 1
+          }
+        ]
       });
     });
   </script>
