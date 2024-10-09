@@ -2,40 +2,55 @@
 <html lang="en">
 
 <head>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
+
+        // Enable debug mode for real-time data collection
         gtag('config', 'G-BK760PLX3W', { 'debug_mode': true });
     </script>
 
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
-                'gtm.start': new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-W6J4QG7H');</script>
     <!-- End Google Tag Manager -->
+
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Shop | Online Store for All Your Needs</title>
+
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BK760PLX3W', { 'debug_mode': true });
+    </script>
+
 </head>
 
 <body>
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6J4QG7H" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6J4QG7H" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
     <nav class="navbar navbar-expand-lg" style="background-color: #1a1a2e;">
         <a class="navbar-brand" href="#">E-Shop</a>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -63,7 +78,8 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 1</h4>
                         <p class="card-text">$19.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -73,7 +89,8 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 2</h4>
                         <p class="card-text">$29.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Product 2', 29.99)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -83,7 +100,8 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 3</h4>
                         <p class="card-text">$39.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -93,18 +111,102 @@
             <button id="purchase-button" class="btn btn-success" onclick="completePurchase()">Complete Purchase</button>
         </div>
     </div>
+    <script>
+        document.getElementById("purchase-button").addEventListener("click", function () {
+            gtag("event", "purchase", {
+                // This purchase event uses a different transaction ID
+                // from the previous purchase event so Analytics
+                // doesn't deduplicate the events.
+                // Learn more: https://support.google.com/analytics/answer/12313109
+                transaction_id: "T_12345_3",
+                value: 30.03,
+                tax: 4.90,
+                shipping: 5.99,
+                currency: "USD",
+                coupon: "SUMMER_SALE",
+                items: [
+                    {
+                        item_id: "Product 1",
+                        item_name: "Iphone",
+                        affiliation: "Ecomm",
+                        coupon: "SUMMER_FUN",
+                        discount: 2.22,
+                        index: 0,
+                        item_brand: "Google",
+                        item_category: "Electronics",
+                        item_category2: "Apple",
+                        item_category3: "Android",
+                        item_category4: "Phone",
+                        item_category5: "Short sleeve",
+                        item_list_id: "related_products",
+                        item_list_name: "Related Products",
+                        item_variant: "green",
+                        location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                        price: 10.01,
+                        quantity: 3
+                    }]
+            });
+        });
+    </script>
 
-    <!-- JavaScript Functions -->
+    <script>
+        document.getElementById("add_to_cart").addEventListener("click", function () {
+            gtag("event", "add_to_cart", {
+                // This purchase event uses a different transaction ID
+                // from the previous purchase event so Analytics
+                // doesn't deduplicate the events.
+                // Learn more: https://support.google.com/analytics/answer/12313109
+                transaction_id: "T_12345_3",
+                value: 30.03,
+                tax: 4.90,
+                shipping: 5.99,
+                currency: "USD",
+                coupon: "SUMMER_SALE",
+            });
+        });
+    </script>
+
+<script>
+    document.getElementById("checkout").addEventListener("click", function () {
+        gtag("event", "checkout", {
+            // This purchase event uses a different transaction ID
+            // from the previous purchase event so Analytics
+            // doesn't deduplicate the events.
+            // Learn more: https://support.google.com/analytics/answer/12313109
+            transaction_id: "T_12345_3",
+            value: 30.03,
+            tax: 4.90,
+            shipping: 5.99,
+            currency: "USD",
+            coupon: "SUMMER_SALE",
+        });
+    });
+</script>
+
+<script>
+    document.getElementById("view_item").addEventListener("click", function () {
+        gtag("event", "view_item", {
+            // This purchase event uses a different transaction ID
+            // from the previous purchase event so Analytics
+            // doesn't deduplicate the events.
+            // Learn more: https://support.google.com/analytics/answer/12313109
+            transaction_id: "T_12345_3",
+            value: 30.03,
+            tax: 4.90,
+            shipping: 5.99,
+            currency: "USD",
+            coupon: "SUMMER_SALE",
+        });
+    });
+</script>
+
+
     <script>
         let cartItems = [];
 
         function addToCart(productName, productPrice) {
             cartItems.push({ name: productName, price: productPrice });
             alert(`${productName} has been added to your cart.`);
-            // Send add_to_cart event to Google Analytics
-            gtag("event", "add_to_cart", {
-                items: [{ item_name: productName, item_category: "Products", price: productPrice }]
-            });
         }
 
         function completePurchase() {
@@ -120,6 +222,7 @@
     </script>
 
     <!-- YouTube Embedded Video -->
+    <!-- Embedded Product Video -->
     <div class="product-video">
         <h2>Watch Our Latest Product Video</h2>
         <iframe id="youtube-video" width="560" height="315"
@@ -139,4 +242,5 @@
         <p>&copy; 2024 E-Shop. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
