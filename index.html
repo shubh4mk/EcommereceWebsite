@@ -78,7 +78,8 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 1</h4>
                         <p class="card-text">$19.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Product 1', 19.99)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -88,7 +89,8 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 2</h4>
                         <p class="card-text">$29.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Product 2', 29.99)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -98,7 +100,8 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 3</h4>
                         <p class="card-text">$39.99</p>
-                        <button class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -110,6 +113,44 @@
     </div>
     <script>
         document.getElementById("purchase-button").addEventListener("click", function () {
+            gtag("event", "purchase", {
+                // This purchase event uses a different transaction ID
+                // from the previous purchase event so Analytics
+                // doesn't deduplicate the events.
+                // Learn more: https://support.google.com/analytics/answer/12313109
+                transaction_id: "T_12345_3",
+                value: 30.03,
+                tax: 4.90,
+                shipping: 5.99,
+                currency: "USD",
+                coupon: "SUMMER_SALE",
+                items: [
+                    {
+                        item_id: "Product 1",
+                        item_name: "Iphone",
+                        affiliation: "Ecomm",
+                        coupon: "SUMMER_FUN",
+                        discount: 2.22,
+                        index: 0,
+                        item_brand: "Google",
+                        item_category: "Electronics",
+                        item_category2: "Apple",
+                        item_category3: "Android",
+                        item_category4: "Phone",
+                        item_category5: "Short sleeve",
+                        item_list_id: "related_products",
+                        item_list_name: "Related Products",
+                        item_variant: "green",
+                        location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+                        price: 10.01,
+                        quantity: 3
+                    }]
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById("add_to_cart").addEventListener("click", function () {
             gtag("event", "purchase", {
                 // This purchase event uses a different transaction ID
                 // from the previous purchase event so Analytics

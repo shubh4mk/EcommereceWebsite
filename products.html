@@ -30,6 +30,17 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-BK760PLX3W', { 'debug_mode': true });
+    </script>
+
 </head>
 
 <body>
@@ -62,7 +73,8 @@
                         <h4 class="card-title">Product 1</h4>
                         <p class="card-text">$19.99</p>
                         <a href="product.html" class="btn btn-primary">View Details</a>
-                        <button class="btn btn-success mt-2" onclick="addToCart(1)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -73,7 +85,8 @@
                         <h4 class="card-title">Product 2</h4>
                         <p class="card-text">$29.99</p>
                         <a href="product.html?id=1" class="btn btn-primary">View Details</a>
-                        <button class="btn btn-success mt-2" onclick="addToCart(2)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
@@ -84,7 +97,8 @@
                         <h4 class="card-title">Product 3</h4>
                         <p class="card-text">$39.99</p>
                         <a href="product.html?id=1" class="btn btn-primary">View Details</a>
-                        <button class="btn btn-success mt-2" onclick="addToCart(3)">Add to Cart</button>
+                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                            Cart</button>
                     </div>
                 </div>
             </div>
