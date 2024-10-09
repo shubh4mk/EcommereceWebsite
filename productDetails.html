@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BK760PLX3W"></script>
     <script>
@@ -25,18 +24,16 @@
         })(window, document, 'script', 'dataLayer', 'GTM-W6J4QG7H');</script>
     <!-- End Google Tag Manager -->
 
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | E-Shop</title>
+    <title>Product Details | E-Shop</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
-
-
 </head>
 
 <body>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W6J4QG7H" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -56,27 +53,31 @@
     </nav>
 
     <div class="container my-4">
-        <h2 class="text-center">Contact Us</h2>
-        <form>
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+        <h2 class="text-center">Product Details</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-fluid" src="assets/images/product1.png" alt="Product 1">
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            <div class="col-md-6">
+                <h3>Product 1</h3>
+                <p class="lead">$19.99</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Nullam in
+                    dui nec eros interdum tincidunt.</p>
+                <button class="btn btn-primary" onclick="addToCart(1)">Add to Cart</button>
             </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="3" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
+        </div>
     </div>
 
     <footer class="text-center mt-4">
         <p>&copy; 2024 E-Shop. All rights reserved.</p>
     </footer>
+
+    <script>
+        function addToCart(productId) {
+            // Function to add product to cart (dummy implementation)
+            alert("Product " + productId + " added to cart!");
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
