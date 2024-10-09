@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Confirmation | E-Shop</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Thank You for Your Purchase!</h1>
+        <h3 class="text-center">Your Order Summary</h3>
+        <div id="order-summary" class="mt-4"></div>
+        <div class="text-center mt-4">
+            <a href="index.html" class="btn btn-primary">Go Back to Shop</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to get cart items from query string and display them
+        function displayOrderSummary() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cartItems = JSON.parse(decodeURIComponent(urlParams.get('cart')));
+
+            if (!cartItems || cartItems.length === 0) {
+                document.getElementById('order-summary').innerHTML = '<p>No items in your order.</p>';
+                return;
+            }
+
+            let summaryHtml = '<ul class="list-group">';
+            let total = 0;
+
+            cartItems.forEach(item => {
+                summaryHtml += `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${item.name} - $${item.price.toFixed(2)}
+                </li>`;
+                total += item.price;
+            });
+
+            summaryHtml += '</ul>';
+            summaryHtml += `<h4 class="mt-4">Total: $${total.toFixed(2)}</h4>`;
+            document.getElementById('order-summary').innerHTML = summaryHtml;
+        }
+
+        // Call the function to display the order summary
+        displayOrderSummary();
+    </script>
+
+    <footer class="text-center mt-4">
+        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>
