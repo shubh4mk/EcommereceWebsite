@@ -83,6 +83,11 @@
         <div class="container">
             <h1 class="display-4">Welcome to E-Shop</h1>
             <p class="lead">Your one-stop online store for all your needs.</p>
+
+            <!-- A/B Test Button Color -->
+        <div class="text-center">
+            <button id="cta-button" class="btn btn-primary" onclick="gtag('event', 'button_click', {'event_category': 'engagement', 'event_label': 'Call to Action Button'});">Shop Now</button>
+        </div>
         </div>
     </header>
 
@@ -129,6 +134,19 @@
         </div>
     </div>
     <script>
+
+         // A/B Testing Logic
+        // Randomly assign users to control or variant group
+        const variant = Math.random() < 0.5; // 50% chance for control vs variant
+        const button = document.getElementById('cta-button');
+
+        // Change button color based on variant group
+        if (variant) {
+            button.classList.remove('btn-primary'); // Remove default button class
+            button.classList.add('btn-success'); // Change to green button for variant
+        }
+
+        
         document.getElementById("purchase-button").addEventListener("click", function () {
             gtag("event", "purchase", {
                 // This purchase event uses a different transaction ID
