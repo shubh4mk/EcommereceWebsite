@@ -74,7 +74,7 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 1</h4>
                         <p class="card-text">$19.99</p>
-                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                        <button id="add-to-cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
                             Cart</button>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 2</h4>
                         <p class="card-text">$29.99</p>
-                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                        <button id="add-to-cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
                             Cart</button>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     <div class="card-body text-center">
                         <h4 class="card-title">Product 3</h4>
                         <p class="card-text">$39.99</p>
-                        <button id="add_to_cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
+                        <button id="add-to-cart" class="btn btn-primary" onclick="addToCart('Product 3', 39.99)">Add to
                             Cart</button>
                     </div>
                 </div>
@@ -159,8 +159,8 @@
     </script>
 
     <script>
-        document.getElementById("add_to_cart").addEventListener("click", function () {
-            gtag("event", "add_to_cart", {
+        document.getElementById("add-to-cart").addEventListener("click", function () {
+            gtag("event", "add-to-cart", {
                 // This purchase event uses a different transaction ID
                 // from the previous purchase event so Analytics
                 // doesn't deduplicate the events.
